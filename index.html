@@ -1,0 +1,1395 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>陈羿涛 - 个人简历</title>
+    <script>
+        // 简历数据
+        const resume = {
+            name: "陈羿涛",
+            phone: "13925440000",
+            email: "3452430194@qq.com",
+            location: "济南·随时可异地实习",
+            about: "齐鲁工业大学电子竞技运动与管理专业本科生，具有较强的组织能力和学习能力。积极参与各类竞赛和项目，擅长团队协作和问题解决。",
+            skills: ["组织管理", "项目策划", "商业计划书撰写", "团队协作", "人工智能", "机器学习", "计算机视觉", "快速学习"],
+            achievements: [
+                "作为项目负责人带领团队参加'挑战杯'中国大学生创业计划竞赛，成功推进项目并撰写商业计划书",
+                "从零开始学习并参与RST国际先进仿生机器人大赛，最终获得国赛资格",
+                "跨专业加入计算机视觉与AI智能体项目，快速掌握相关技能并做出贡献"
+            ],
+            education: [
+                {
+                    school: "齐鲁工业大学（山东省科学院）",
+                    degree: "本科在读",
+                    major: "电子竞技运动与管理",
+                    period: "2025.09 - 至今"
+                }
+            ],
+            campusExperiences: [
+                {
+                    title: "校创新创业学院成员",
+                    period: "2025.09 - 至今",
+                    description: "参与学院日常值班，协助组织各类创新创业活动，接触并学习创业项目管理流程。"
+                },
+                {
+                    title: "'挑战杯'中国大学生创业计划竞赛项目负责人",
+                    period: "2025.11 - 至今",
+                    description: "负责组织动员成员积极推进竞赛，协调团队分工，主导商业计划书撰写，提升项目竞争力。"
+                },
+                {
+                    title: "RST国际先进仿生机器人大赛国赛参与者",
+                    period: "2025.10 - 2025.12",
+                    description: "从零开始学习机器人相关知识，参与机器人设计与开发，最终团队获得国赛资格，展现了强大的学习能力和适应能力。"
+                },
+                {
+                    title: "计算机视觉与AI智能体项目成员",
+                    period: "2025.09 - 至今",
+                    description: "跨专业加入项目团队，参与AI智能体的设计与实现，学习并应用机器学习和计算机视觉技术，提升了技术实践能力。"
+                },
+                {
+                    title: "学校网络运维社团成员",
+                    period: "2025.09 - 2025.11",
+                    description: "参与学校网络运维社团，学习并掌握网络运维基本知识，包括网络设备配置、故障排除和网络安全基础。"
+                }
+            ],
+            skillsMatrix: {
+                "专业技能": [
+                    { name: "项目管理", level: 85 },
+                    { name: "商业计划书", level: 80 },
+                    { name: "竞赛组织", level: 75 }
+                ],
+                "技术能力": [
+                    { name: "人工智能", level: 60 },
+                    { name: "机器学习", level: 55 },
+                    { name: "计算机视觉", level: 50 }
+                ],
+                "软技能": [
+                    { name: "团队协作", level: 90 },
+                    { name: "沟通能力", level: 85 },
+                    { name: "学习能力", level: 95 }
+                ]
+            },
+            certificates: [
+            {
+                name: "阿里云Apsara Clouder专项技能认证",
+                issuer: "阿里云",
+                date: "2025年10月"
+            }
+        ],
+            projects: []
+        };
+
+        // 检测系统主题偏好
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.classList.toggle('dark', prefersDark);
+    </script>
+    <style>
+        :root {
+            --primary-color: #3b82f6;
+            --secondary-color: #6366f1;
+            --accent-color: #8b5cf6;
+            --text-color: #1f2937;
+            --text-secondary: #4b5563;
+            --bg-color: #ffffff;
+            --bg-secondary: #f9fafb;
+            --border-color: #e5e7eb;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+            --card-hover: rgba(59, 130, 246, 0.1);
+        }
+
+        .dark {
+            --primary-color: #60a5fa;
+            --secondary-color: #818cf8;
+            --accent-color: #a78bfa;
+            --text-color: #f9fafb;
+            --text-secondary: #d1d5db;
+            --bg-color: #111827;
+            --bg-secondary: #1f2937;
+            --border-color: #374151;
+            --shadow-color: rgba(0, 0, 0, 0.3);
+            --card-hover: rgba(96, 165, 250, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            line-height: 1.5;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            padding-top: 70px;
+        }
+
+        /* 导航栏样式 */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: var(--bg-color);
+            border-bottom: 1px solid var(--border-color);
+            padding: 0.75rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0 2px 4px var(--shadow-color);
+        }
+
+        .navbar-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .navbar-nav {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-link.active {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        .navbar-actions {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .btn {
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
+            font-weight: 500;
+            cursor: pointer;
+            border: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            background-color: var(--primary-color);
+            color: white;
+            transition: all 0.2s ease;
+        }
+
+        .btn:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        /* 容器样式 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        /* Hero 区域样式 */
+        .hero {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-color) 100%);
+            border-radius: 0.75rem;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 6px var(--shadow-color);
+        }
+
+        .hero-content {
+            flex: 1;
+        }
+
+        .hero-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-description {
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            max-width: 800px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-secondary);
+        }
+
+        .contact-item i {
+            color: var(--primary-color);
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .skills-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+        }
+
+        .badge {
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            background-color: var(--bg-secondary);
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            font-weight: 500;
+            border: 1px solid var(--border-color);
+            transition: all 0.2s ease;
+        }
+
+        .badge:hover {
+            background-color: var(--card-hover);
+            color: var(--primary-color);
+            border-color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        /* 成就区域样式 */
+        .achievements {
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .section-title::before {
+            content: '';
+            display: block;
+            width: 0.75rem;
+            height: 2rem;
+            background-color: var(--primary-color);
+            border-radius: 0.375rem;
+        }
+
+        .achievements-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .achievement-card {
+            padding: 1.5rem;
+            background-color: var(--bg-secondary);
+            border-radius: 0.75rem;
+            border: 1px solid var(--border-color);
+            transition: all 0.2s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .achievement-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0.5rem;
+            height: 100%;
+            background-color: var(--primary-color);
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px var(--shadow-color);
+            border-color: var(--primary-color);
+        }
+
+        .achievement-title {
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: var(--text-color);
+        }
+
+        /* Tabs 样式 */
+        .tabs-container {
+            margin-bottom: 3rem;
+        }
+
+        .tabs-header {
+            display: flex;
+            gap: 0.5rem;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 1.5rem;
+            overflow-x: auto;
+            scrollbar-width: thin;
+        }
+
+        .tab-button {
+            padding: 0.75rem 1.5rem;
+            background-color: transparent;
+            border: none;
+            font-weight: 500;
+            color: var(--text-secondary);
+            cursor: pointer;
+            white-space: nowrap;
+            transition: all 0.2s ease;
+        }
+
+        .tab-button:hover {
+            color: var(--primary-color);
+        }
+
+        .tab-button.active {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* 经历样式 */
+        .experience-list {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .experience-item {
+            padding: 1.5rem;
+            background-color: var(--bg-secondary);
+            border-radius: 0.75rem;
+            border: 1px solid var(--border-color);
+            transition: all 0.2s ease;
+        }
+
+        .experience-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px var(--shadow-color);
+            border-color: var(--primary-color);
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+        }
+
+        .experience-title {
+            font-weight: 600;
+            font-size: 1.25rem;
+            color: var(--text-color);
+        }
+
+        .experience-period {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            background-color: var(--bg-color);
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            border: 1px solid var(--border-color);
+        }
+
+        .experience-description {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* 项目样式 */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .project-card {
+            padding: 1.5rem;
+            background-color: var(--bg-secondary);
+            border-radius: 0.75rem;
+            border: 1px solid var(--border-color);
+            transition: all 0.2s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px var(--shadow-color);
+            border-color: var(--primary-color);
+            background-color: var(--card-hover);
+        }
+
+        .project-title {
+            font-weight: 600;
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-color);
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-description {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            flex: 1;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 0.75rem;
+            margin-top: auto;
+        }
+
+        .project-link {
+            font-size: 0.875rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        .project-link:hover {
+            text-decoration: underline;
+        }
+
+        /* 技能矩阵样式 */
+        .skills-container {
+            margin-bottom: 3rem;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            padding: 1.5rem;
+            background-color: var(--bg-secondary);
+            border-radius: 0.75rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .skill-category-title {
+            font-weight: 600;
+            margin-bottom: 1.25rem;
+            color: var(--text-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .skill-category-title i {
+            color: var(--primary-color);
+        }
+
+        .skill-item {
+            margin-bottom: 1.25rem;
+        }
+
+        .skill-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+
+        .skill-name {
+            font-weight: 500;
+            color: var(--text-color);
+        }
+
+        .skill-level {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
+
+        .skill-bar {
+            height: 0.75rem;
+            background-color: var(--bg-color);
+            border-radius: 0.375rem;
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            border-radius: 0.25rem;
+            transition: width 1s ease-in-out;
+        }
+
+        /* 教育和证书样式 */
+        .education-certification {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .education-card, .certification-card {
+            padding: 1.5rem;
+            background-color: var(--bg-secondary);
+            border-radius: 0.75rem;
+            border: 1px solid var(--border-color);
+            transition: all 0.2s ease;
+        }
+
+        .education-card:hover, .certification-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px var(--shadow-color);
+            border-color: var(--primary-color);
+        }
+
+        .education-school, .certification-name {
+            font-weight: 600;
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+        }
+
+        .education-degree, .certification-issuer {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .education-period, .certification-date {
+            font-size: 0.875rem;
+            color: var(--primary-color);
+        }
+
+        /* 页脚样式 */
+        .footer {
+            padding: 2rem 1.5rem;
+            background-color: var(--bg-secondary);
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+        }
+
+        .footer-link:hover {
+            color: var(--primary-color);
+            text-decoration: underline;
+        }
+
+        /* 返回顶部按钮 */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            border: none;
+            box-shadow: 0 4px 6px var(--shadow-color);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.2s ease;
+            z-index: 1000;
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        /* 响应式样式 */
+        @media (max-width: 768px) {
+            .navbar-nav {
+                display: none;
+            }
+
+            .hero {
+                flex-direction: column;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .education-certification {
+                grid-template-columns: 1fr;
+            }
+
+            .experience-header {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+
+        /* 打印样式 */
+        @media print {
+            body {
+                padding-top: 0;
+                background-color: white;
+                color: #1f2937;
+            }
+
+            .navbar, .back-to-top, .theme-toggle, .print-button {
+                display: none !important;
+            }
+
+            .container {
+                padding: 0;
+            }
+
+            .hero, .achievement-card, .experience-item, .project-card, .skill-category, .education-card, .certification-card {
+                background-color: white;
+                border: none;
+                box-shadow: none;
+                padding: 0;
+                margin-bottom: 1rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+                margin-top: 2rem;
+                margin-bottom: 1rem;
+            }
+
+            .tab-content {
+                display: block !important;
+            }
+
+            .tabs-header {
+                display: none;
+            }
+
+            @page {
+                margin: 1in;
+            }
+        }
+
+        /* 辅助样式 */
+        .hidden {
+            display: none !important;
+        }
+
+        .mb-4 {
+            margin-bottom: 1rem;
+        }
+
+        .mb-6 {
+            margin-bottom: 1.5rem;
+        }
+
+        .mb-8 {
+            margin-bottom: 2rem;
+        }
+
+        .icon {
+            width: 1.25rem;
+            height: 1.25rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* 骨架屏样式 */
+        .skeleton {
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: skeleton-loading 1.5s infinite;
+        }
+
+        @keyframes skeleton-loading {
+            0% {
+                background-position: 200% 0;
+            }
+            100% {
+                background-position: -200% 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="navbar-title">陈羿涛</div>
+        <div class="navbar-nav">
+            <a href="#home" class="nav-link active">首页</a>
+            <a href="#achievements" class="nav-link">成就</a>
+            <a href="#experience" class="nav-link">经历</a>
+            <a href="#skills" class="nav-link">技能</a>
+            <a href="#education" class="nav-link">教育</a>
+        </div>
+        <div class="navbar-actions">
+            <button id="theme-toggle" class="btn btn-outline">
+                <i class="icon">🌙</i>
+                <span>深色模式</span>
+            </button>
+            <button id="print-button" class="btn">
+                <i class="icon">🖨️</i>
+                <span>打印简历</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- 主要内容 -->
+    <div class="container">
+        <!-- Hero 区域 -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">陈羿涛</h1>
+                <h2 class="hero-subtitle">电子竞技运动与管理 | 本科在读</h2>
+                <p class="hero-description">
+                    齐鲁工业大学电子竞技运动与管理专业本科生，具有较强的组织能力和学习能力。积极参与各类竞赛和项目，擅长团队协作和问题解决。
+                </p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="icon">📱</i>
+                        <span>13925440000</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="icon">✉️</i>
+                        <span id="email-display">3452430194@qq.com</span>
+                        <button id="copy-email" class="btn btn-outline" style="padding: 0.25rem 0.5rem; font-size: 0.75rem;">复制</button>
+                    </div>
+                    <div class="contact-item">
+                        <i class="icon">🌏</i>
+                        <span>济南·随时可异地实习</span>
+                    </div>
+                </div>
+                <div class="hero-actions">
+                    <button class="btn">
+                        <i class="icon">📄</i>
+                        <span>下载简历</span>
+                    </button>
+                    <button class="btn btn-outline">
+                        <i class="icon">📞</i>
+                        <span>联系我</span>
+                    </button>
+                </div>
+            </div>
+            <div class="skills-badges">
+                <span class="badge">组织管理</span>
+                <span class="badge">项目策划</span>
+                <span class="badge">商业计划书撰写</span>
+                <span class="badge">团队协作</span>
+                <span class="badge">人工智能</span>
+                <span class="badge">机器学习</span>
+                <span class="badge">计算机视觉</span>
+                <span class="badge">快速学习</span>
+            </div>
+        </section>
+
+        <!-- 成就区域 -->
+        <section id="achievements" class="achievements mb-8">
+            <h2 class="section-title">亮点成果</h2>
+            <div class="achievements-list">
+                <div class="achievement-card">
+                    <div class="achievement-title">挑战杯竞赛项目负责人</div>
+                    <p class="achievement-description">作为项目负责人带领团队参加"挑战杯"中国大学生创业计划竞赛，成功推进项目并撰写商业计划书</p>
+                </div>
+                <div class="achievement-card hidden">
+                    <div class="achievement-title">RST国际机器人大赛国赛</div>
+                    <p class="achievement-description">从零开始学习并参与RST国际先进仿生机器人大赛，最终获得国赛资格，展现了强大的学习能力</p>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-title">跨专业AI项目参与</div>
+                    <p class="achievement-description">跨专业加入计算机视觉与AI智能体项目，快速掌握相关技能并做出贡献，提升了技术实践能力</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 经历区域 -->
+        <section id="experience" class="tabs-container mb-8">
+            <h2 class="section-title">经历</h2>
+            <div class="tabs-header">
+                <button class="tab-button active" data-tab="campus">校园经历</button>
+                <button class="tab-button" data-tab="internship">实习经历</button>
+                <button class="tab-button" data-tab="work">工作经历</button>
+            </div>
+            <div class="tab-content active" id="campus-tab">
+                <div class="experience-list">
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <div class="experience-title">校创新创业学院成员</div>
+                            <div class="experience-period">2025.09 - 至今</div>
+                        </div>
+                        <p class="experience-description">参与学院日常值班，协助组织各类创新创业活动，接触并学习创业项目管理流程。</p>
+                    </div>
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <div class="experience-title">"挑战杯"中国大学生创业计划竞赛项目负责人</div>
+                            <div class="experience-period">2025.11 - 至今</div>
+                        </div>
+                        <p class="experience-description">负责组织动员成员积极推进竞赛，协调团队分工，主导商业计划书撰写，提升项目竞争力。</p>
+                    </div>
+                    <div class="experience-item hidden">
+                        <div class="experience-header">
+                            <div class="experience-title">RST国际先进仿生机器人大赛国赛参与者</div>
+                            <div class="experience-period">2026.04 - 2026.08</div>
+                        </div>
+                        <p class="experience-description">从零开始学习机器人相关知识，参与机器人设计与开发，最终团队获得国赛资格，展现了强大的学习能力和适应能力。</p>
+                    </div>
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <div class="experience-title">计算机视觉与AI智能体项目成员</div>
+                            <div class="experience-period">2025.09 - 至今</div>
+                        </div>
+                        <p class="experience-description">跨专业加入项目团队，参与AI智能体的设计与实现，学习并应用机器学习和计算机视觉技术，提升了技术实践能力。</p>
+                    </div>
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <div class="experience-title">学校网络运维社团成员</div>
+                            <div class="experience-period">2025.09 - 2025.11</div>
+                        </div>
+                        <p class="experience-description">参与学校网络运维社团，学习并掌握网络运维基本知识，包括网络设备配置、故障排除和网络安全基础。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-content" id="internship-tab">
+                <div class="experience-list">
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <div class="experience-title">暂无实习经历</div>
+                        </div>
+                        <p class="experience-description">目前正在积极寻找实习机会，随时可异地实习。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-content" id="work-tab">
+                <div class="experience-list">
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <div class="experience-title">暂无工作经历</div>
+                        </div>
+                        <p class="experience-description">专注于学业和校园活动，积极提升专业技能和实践能力。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 项目区域 -->
+        <section id="projects" class="tabs-container mb-8">
+            <h2 class="section-title">项目</h2>
+            <div class="tabs-header">
+                <button class="tab-button active" data-tab="academic">学术项目</button>
+                <button class="tab-button" data-tab="personal">个人项目</button>
+            </div>
+            <div class="tab-content active" id="academic-tab">
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <h3 class="project-title">AI智能体开发项目</h3>
+                        <div class="project-tech">
+                            <span class="badge">人工智能</span>
+                            <span class="badge">机器学习</span>
+                            <span class="badge">Python</span>
+                        </div>
+                        <p class="project-description">参与开发基于机器学习的AI智能体，负责算法实现和模型训练，提升了AI智能体的决策能力。</p>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="icon">🔗</i>
+                                <span>查看详情</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <h3 class="project-title">挑战杯创业项目</h3>
+                        <div class="project-tech">
+                            <span class="badge">项目管理</span>
+                            <span class="badge">商业计划</span>
+                            <span class="badge">团队协作</span>
+                        </div>
+                        <p class="project-description">作为负责人，组织团队完成创业项目的策划、实施和商业计划书撰写，提升了项目的竞争力。</p>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="icon">🔗</i>
+                                <span>查看详情</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-content" id="personal-tab">
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <h3 class="project-title">暂无个人项目</h3>
+                        <p class="project-description">目前专注于学术项目和竞赛，计划在未来开发个人项目以展示更多技能。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 技能矩阵 -->
+        <section id="skills" class="skills-container mb-8">
+            <h2 class="section-title">技能矩阵</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3 class="skill-category-title">
+                        <i class="icon">📚</i>
+                        专业技能
+                    </h3>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">项目管理</span>
+                            <span class="skill-level">85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">商业计划书</span>
+                            <span class="skill-level">80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">竞赛组织</span>
+                            <span class="skill-level">75%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 75%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3 class="skill-category-title">
+                        <i class="icon">💻</i>
+                        技术能力
+                    </h3>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">人工智能</span>
+                            <span class="skill-level">60%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 60%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">机器学习</span>
+                            <span class="skill-level">55%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 55%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">计算机视觉</span>
+                            <span class="skill-level">50%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 50%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3 class="skill-category-title">
+                        <i class="icon">🤝</i>
+                        软技能
+                    </h3>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">团队协作</span>
+                            <span class="skill-level">90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">沟通能力</span>
+                            <span class="skill-level">85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">学习能力</span>
+                            <span class="skill-level">95%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 95%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 教育和证书 -->
+        <section id="education" class="education-certification mb-8">
+            <div class="education-card">
+                <h3 class="education-school">齐鲁工业大学（山东省科学院）</h3>
+                <p class="education-degree">本科在读 | 电子竞技运动与管理</p>
+                <p class="education-period">2025.09 - 至今</p>
+            </div>
+            <div class="certification-card">
+                <h3 class="certification-name">阿里云Apsara Clouder专项技能认证</h3>
+                <p class="certification-issuer">阿里云</p>
+                <p class="certification-date">2025年10月</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#home" class="footer-link">首页</a>
+                <a href="#achievements" class="footer-link">成就</a>
+                <a href="#experience" class="footer-link">经历</a>
+                <a href="#skills" class="footer-link">技能</a>
+                <a href="#education" class="footer-link">教育</a>
+            </div>
+            <p>&copy; 2025 陈羿涛. 保留所有权利.</p>
+            <p>最后更新: 2025年11月</p>
+        </div>
+    </footer>
+
+    <!-- 返回顶部按钮 -->
+    <button id="back-to-top" class="back-to-top">
+        <i class="icon">↑</i>
+    </button>
+
+    <script>
+        // DOM 加载完成后执行
+        document.addEventListener('DOMContentLoaded', function() {
+            // 初始化技能进度条动画
+            initSkillBars();
+            
+            // 初始化标签页切换
+            initTabs();
+            
+            // 初始化导航链接
+            initNavLinks();
+            
+            // 初始化返回顶部按钮
+            initBackToTop();
+            
+            // 初始化主题切换
+            initThemeToggle();
+            
+            // 初始化打印按钮
+            initPrintButton();
+            
+            // 初始化邮箱复制功能
+            initCopyEmail();
+        });
+
+        // 技能进度条动画
+        function initSkillBars() {
+            const skillBars = document.querySelectorAll('.skill-progress');
+            
+            // 使用 Intersection Observer 检测元素是否可见
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const width = entry.target.style.width;
+                        entry.target.style.width = '0';
+                        setTimeout(() => {
+                            entry.target.style.width = width;
+                        }, 100);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            skillBars.forEach(bar => {
+                observer.observe(bar);
+            });
+        }
+
+        // 标签页切换功能
+        function initTabs() {
+            const tabButtons = document.querySelectorAll('.tab-button');
+            
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const tabId = button.getAttribute('data-tab');
+                    const tabContainer = button.closest('.tabs-container');
+                    const tabContents = tabContainer.querySelectorAll('.tab-content');
+                    const tabButtons = tabContainer.querySelectorAll('.tab-button');
+                    
+                    // 移除所有活动状态
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    tabContents.forEach(content => content.classList.remove('active'));
+                    
+                    // 设置当前活动状态
+                    button.classList.add('active');
+                    document.getElementById(`${tabId}-tab`).classList.add('active');
+                    
+                    // 添加键盘导航支持
+                    button.setAttribute('tabindex', '0');
+                    button.setAttribute('role', 'tab');
+                    button.setAttribute('aria-selected', 'true');
+                });
+                
+                // 添加键盘导航支持
+                button.setAttribute('tabindex', '0');
+                button.setAttribute('role', 'tab');
+                
+                button.addEventListener('keydown', (e) => {
+                    // 左右箭头键切换标签页
+                    if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
+                        e.preventDefault();
+                        const tabContainer = button.closest('.tabs-container');
+                        const tabButtons = Array.from(tabContainer.querySelectorAll('.tab-button'));
+                        const currentIndex = tabButtons.indexOf(button);
+                        let newIndex;
+                        
+                        if (e.key === 'ArrowLeft') {
+                            newIndex = currentIndex === 0 ? tabButtons.length - 1 : currentIndex - 1;
+                        } else {
+                            newIndex = currentIndex === tabButtons.length - 1 ? 0 : currentIndex + 1;
+                        }
+                        
+                        tabButtons[newIndex].focus();
+                        tabButtons[newIndex].click();
+                    }
+                });
+            });
+        }
+
+        // 导航链接功能
+        function initNavLinks() {
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = link.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        // 平滑滚动到目标位置
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80, // 减去导航栏高度
+                            behavior: 'smooth'
+                        });
+                        
+                        // 更新活动状态
+                        navLinks.forEach(navLink => navLink.classList.remove('active'));
+                        link.classList.add('active');
+                    }
+                });
+            });
+            
+            // 监听滚动事件，更新导航活动状态
+            window.addEventListener('scroll', () => {
+                const scrollPosition = window.scrollY;
+                
+                document.querySelectorAll('section[id]').forEach(section => {
+                    const sectionTop = section.offsetTop - 100;
+                    const sectionHeight = section.offsetHeight;
+                    const sectionId = section.getAttribute('id');
+                    
+                    if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                        navLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href') === `#${sectionId}`) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            });
+        }
+
+        // 返回顶部按钮
+        function initBackToTop() {
+            const backToTopButton = document.getElementById('back-to-top');
+            
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) {
+                    backToTopButton.classList.add('show');
+                } else {
+                    backToTopButton.classList.remove('show');
+                }
+            });
+            
+            backToTopButton.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
+
+        // 主题切换功能
+        function initThemeToggle() {
+            const themeToggle = document.getElementById('theme-toggle');
+            const htmlElement = document.documentElement;
+            
+            // 检查当前主题
+            const isDark = htmlElement.classList.contains('dark');
+            updateThemeToggleText(isDark);
+            
+            themeToggle.addEventListener('click', () => {
+                htmlElement.classList.toggle('dark');
+                const newIsDark = htmlElement.classList.contains('dark');
+                updateThemeToggleText(newIsDark);
+            });
+            
+            function updateThemeToggleText(isDark) {
+                const icon = themeToggle.querySelector('i');
+                const text = themeToggle.querySelector('span');
+                
+                if (isDark) {
+                    icon.textContent = '☀️';
+                    text.textContent = '浅色模式';
+                } else {
+                    icon.textContent = '🌙';
+                    text.textContent = '深色模式';
+                }
+            }
+        }
+
+        // 打印按钮功能
+        function initPrintButton() {
+            const printButton = document.getElementById('print-button');
+            
+            printButton.addEventListener('click', () => {
+                window.print();
+            });
+        }
+
+        // 邮箱复制功能
+        function initCopyEmail() {
+            const copyButton = document.getElementById('copy-email');
+            const emailDisplay = document.getElementById('email-display');
+            
+            copyButton.addEventListener('click', () => {
+                const email = emailDisplay.textContent;
+                
+                // 创建临时输入元素
+                const tempInput = document.createElement('input');
+                tempInput.value = email;
+                document.body.appendChild(tempInput);
+                
+                // 选择并复制文本
+                tempInput.select();
+                document.execCommand('copy');
+                
+                // 移除临时元素
+                document.body.removeChild(tempInput);
+                
+                // 显示复制成功提示
+                const originalText = copyButton.textContent;
+                copyButton.textContent = '已复制';
+                
+                setTimeout(() => {
+                    copyButton.textContent = originalText;
+                }, 2000);
+            });
+        }
+    </script>
+</body>
+</html>
